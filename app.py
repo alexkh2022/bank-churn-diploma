@@ -36,6 +36,8 @@ class FeatureEngineer(BaseEstimator, TransformerMixin):
             columns=[c for c in cols_to_drop if c in df.columns], errors='ignore')
         return df
 
+import __main__
+__main__.FeatureEngineer = FeatureEngineer
 
 # --- 1. КОНФІГУРАЦІЯ СТОРІНКИ ---
 st.set_page_config(page_title="Bank Retention System", layout="wide")
@@ -235,3 +237,4 @@ if st.button("Згенерувати План Дій"):
                 st.markdown(response.choices[0].message.content)
             except Exception as e:
                 st.error(f"Помилка при зверненні до API: {e}")
+
